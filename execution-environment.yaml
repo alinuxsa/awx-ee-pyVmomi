@@ -15,12 +15,9 @@ dependencies:
       - name: ansible.posix
       - name: ansible.windows
       - name: ansible.utils
-        version: "=2.9.0"
       - name: community.vmware
-        version: "=3.4.0"
       - name: community.general
       - name: community.zabbix
-      - name: hashi_vault
   system: |
     git-core [platform:rpm]
     python3.10-devel [platform:rpm compile]
