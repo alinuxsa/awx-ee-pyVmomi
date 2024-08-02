@@ -18,6 +18,7 @@ dependencies:
       - name: community.vmware
       - name: community.general
       - name: community.zabbix
+      - name: community.mysql
   system: |
     git-core [platform:rpm]
     python3.9-devel [platform:rpm compile]
@@ -51,6 +52,7 @@ dependencies:
     receptorctl
     openpyxl
     pandas
+    PyMySQL
 additional_build_steps:
   append_base:
     - RUN $PYCMD -m pip install -U pip
