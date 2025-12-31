@@ -20,7 +20,7 @@ dependencies:
       - name: community.mysql
   system: |
     git-core [platform:rpm]
-    python3.9-devel [platform:rpm compile]
+    python3.11-devel [platform:rpm compile]
     libcurl-devel [platform:rpm compile]
     krb5-devel [platform:rpm compile]
     krb5-workstation [platform:rpm]
@@ -54,6 +54,9 @@ dependencies:
     PyMySQL
 additional_build_steps:
   append_base:
+    - RUN dnf install -y python3.11 python3.11-pip python3.11-devel
+    - RUN alternatives --set python3 /usr/bin/python3.11
+    - ENV PYCMD=/usr/bin/python3.11
     - RUN $PYCMD -m pip install -U pip
   append_final:
     - COPY --from=quay.io/ansible/receptor:devel /usr/bin/receptor /usr/bin/receptor
