@@ -17,7 +17,6 @@ dependencies:
       - name: ansible.utils
       - name: community.vmware
       - name: community.general
-      - name: community.zabbix
       - name: community.mysql
   system: |
     git-core [platform:rpm]
